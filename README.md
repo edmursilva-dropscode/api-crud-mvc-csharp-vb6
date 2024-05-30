@@ -23,7 +23,14 @@ Este desafio técnico visa avaliar as habilidades de desenvolvimento Full Stack 
 <br>
 <h1 align="center">
     <img src="./ImageReadme/foto04.png">
-    <img src="./ImageReadme/foto02.png">
+</h1>
+
+
+## VB6 Usuários
+
+<br>
+<h1 align="center">
+    <img src="./ImageReadme/foto05.png">
 </h1>
 
 ## Ferramenta utilizada
