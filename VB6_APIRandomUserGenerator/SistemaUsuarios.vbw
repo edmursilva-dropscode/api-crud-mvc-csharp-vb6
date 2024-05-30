@@ -1,0 +1,10 @@
+frmUsuarioLista = 208, 208, 1298, 730, Z, 182, 182, 1272, 704, C
+modFuncoes = 78, 78, 1168, 600, 
+clsConexao = 104, 104, 1194, 626, 
+clsSystem = 130, 130, 1220, 652, 
+frmUsuario = 26, 26, 1116, 548, , 208, 208, 1298, 730, C
+clsUsuarioNegocios = 234, 234, 1324, 756, 
+clsUsuarioDados = 0, 0, 1090, 522, 
+dteSistemaUsuario = 52, 52, 1142, 574, C, 882, 26, 2214, 813, C
+dtrUsuario = 0, 0, 0, 0, C, 26, 26, 627, 490, C
+JsonConverter = 104, 104, 1330, 626, 

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<UsuarioModel>
+@{
+    ViewBag.Subtitulo = "Listagem de Usuários";
+}
+
+<header class="d-flex justify-content-between align-items-center">
+    <div>
+        <h1 class="text-primary">@ViewBag.Subtitulo</h1>
+    </div>
+    <div>
+        <a asp-action="Cadastrar" class="btn btn-primary">Novo Usuário</a>
+        <button id="btnRandomUser" class="btn btn-secondary">API Random</button>
+        <button id="btnGerarRelatorio" class="btn btn-success">Relatório</button>
+    </div>
+</header>
+<hr>
+
+<partial name="_Mensagem"></partial>
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped tabela-usuarios">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Senha</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Gênero</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model)
+            {
+                <tr>
+                    <td>@usuario.Nome</td>
+                    <td>@usuario.Sobrenome</td>
+                    <td>@usuario.Senha</td>
+                    <td>@usuario.Email</td>
+                    <td>@usuario.Telefone</td>
+                    <td>@usuario.Genero</td>
+                    <td>
+                        <a asp-action="Cadastrar" asp-route-id="@usuario.IdUsuario"
+                           class="btn btn-sm btn-secondary">Alterar</a>
+                        <a asp-action="Excluir" asp-route-id="@usuario.IdUsuario" class="btn btn-sm btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não há nenhuma usuário cadastrado.</p>
+}
+@*Tela de listagem simples para manipulaçãode usuários*@
+<script>
+    @*Botao Adicionar Usuário Aleatório*@
+    document.getElementById("btnRandomUser").addEventListener("click", function () {
+        if (confirm("Adicionar usuários aleatórios ?")) {
+            fetch('/Usuario/AddRandomUsers', {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert('Erro ao adicionar usuários aleatórios.');
+                }
+            });
+        }
+    });
+    @*Botao Gerar Relatório*@
+    document.getElementById("btnGerarRelatorio").addEventListener("click", function () {
+        if (confirm("Imprimir relatório de usuários ?")) {
+            window.open('/Usuario/GerarRelatorioPDF', '_blank');
+        }
+    });
+</script>
+@*Validacao do elemento a ser pressionado*@

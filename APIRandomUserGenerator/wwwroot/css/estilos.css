@@ -1,0 +1,7 @@
+.tabela-usuarios tr > th:last-child,
+.tabela-usuarios tr > td:last-child
+{
+    width: 1%;
+    white-space: nowrap; 
+    text-align: center;
+}
