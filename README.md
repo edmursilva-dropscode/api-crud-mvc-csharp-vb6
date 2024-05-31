@@ -35,4 +35,4 @@ Este desafio técnico visa avaliar as habilidades de desenvolvimento Full Stack 
 
 ## Ferramenta utilizada
 . IDE - Visual Studio 2022,
-. C#, VB6, ASP.Net, JavaScript, Angular com metodologia MVC com CRUD, banco de dados PostgreSQL e SqlServer
+. C#, VB6, ASP.Net, JavaScript, Angular com metodologia MVC com CRUD, API, banco de dados PostgreSQL e SqlServer
